@@ -4,7 +4,7 @@ cd /usr/local/bin
 
 for i in aarch64 arm armhf
 do
-  wget https://github.com/tsl0922/ttyd/releases/download/1.6.3/ttyd.${i} 
+  wget https://github.com/tsl0922/ttyd/releases/download/1.7.7/ttyd.${i} 
 done
   
 case `uname -m` in
