@@ -5,6 +5,7 @@ pkg-config
 libreadline-dev
 gcc-arm-none-eabi
 libnewlib-dev
+liblz4-dev
 libbz2-dev
 libbluetooth-dev
 libpython3-dev
@@ -18,3 +19,5 @@ qrencode
 php8.2-cgi
 openvpn
 wireguard
+jq
+isoquery
