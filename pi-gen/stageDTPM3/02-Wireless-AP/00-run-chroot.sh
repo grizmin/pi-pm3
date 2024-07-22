@@ -30,7 +30,7 @@ mkdir /etc/raspap/hostapd
 mkdir /etc/raspap/lighttpd
 mkdir /etc/raspap/system
 
-chown -R www-data:www-data /var/www/html
+chown -R www-data:www-data /var/www/html 
 chown -R www-data:www-data /etc/raspap
 
 mv installers/*log.sh /etc/raspap/hostapd
@@ -43,8 +43,10 @@ cp installers/configport.sh /etc/raspap/lighttpd
 chown -c root:www-data /etc/raspap/lighttpd/*.sh
 
 mv installers/raspapd.service /lib/systemd/system
+cp installers/dhcpcd.service /lib/systemd/system
 systemctl daemon-reload || true
 systemctl enable raspapd.service
+systemctl enable dhcpcd.service
 
 cp /etc/hostapd/hostapd.conf ~/hostapd.conf.old || true
 cp config/default_hostapd /etc/default/hostapd || true
