@@ -1,8 +1,21 @@
 # Proxmark3 Raspberry Pi Zero 2 W
+Did you ever thought how cool it will be if you can add network capabilities to yor cheap Proxmark3 easy?
+You can do that relatively cheap using a RPi zero 2 w and external power. Both my pi0 and proxmark3easy are running for more than 5 hours on a 10000mah xiaomi power bank.   
 
-This image is configured to set up a wifio access point, and SSH.   
-It will expose a web shell on port 8000 and a pm3 shell on port 8050.    
+All you need to do is boot from this image and enjoy using your pm3 over wifi.   
+
+This image is configured to set up a wifi access point, and SSH, web bash shell and a web pm3 cli  
 The default user credentials are - username: `dt` password: `proxmark3`
+
+
+## usage
+You can burn the image to a sd-card using https://etcher.balena.io/   
+Insert the sd-card in your RPI Zero 2 w and power it on.   
+Wait for one minute for the OS to boot and then connect to the Access Point using the following credentials
+```
+SSID: raspi-webgui
+Password: ChangeMe
+```
 
 ## AP management interface
 Management interface: http://10.3.141.1/
@@ -22,19 +35,10 @@ Password: ChangeMe
 * pm3 shell (u: dt ; p: proxmark3) at http://10.3.141.1:8080/
 ![pm3shell](images/pm3shell.jpg)
 
-## usage
-You can burn the image to a sd-card using https://etcher.balena.io/   
-Insert the sd-card in your RPI Zero 2 w and power it on.   
-Wait for one minute for the OS to boot and then connect to the Access Point using the following credentials
-```
-SSID: raspi-webgui
-Password: ChangeMe
-```
-
 ## build
 
-To build new image you need will have to follow the steps below:
-(Tested only on Mac Arm64 arch)
+To build new image you should follow the steps below:
+(Tested only on Apple Silicon macbook)
 
 1. checkout pi-gen  
     ``` git clone https://github.com/RPi-Distro/pi-gen.git pmbuild ```
@@ -46,5 +50,5 @@ To build new image you need will have to follow the steps below:
 5. start the build in a docker container   
    ``` ./docker-build.sh ```
 
-On a successful build uou should get something like the screenshot blow:
+On a successful build you should get something like the screenshot blow:
         ![build](images/build.jpg)
