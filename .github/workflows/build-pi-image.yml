@@ -28,5 +28,5 @@ jobs:
         with:
           image-name: pi-pm3-${{ github.event.inputs.tag || github.ref_name }}
           pi-gen-dir: ./pi-gen
-          stage-list: stage0 stageDTPM3
+          stage-list: stage0 ./stageDTPM3
           verbose-output: true
