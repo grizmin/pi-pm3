@@ -15,6 +15,13 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: fix apt keys
+        run: |
+          for key in 6ED0E7B82643E131 78DBA3BC47EF2265 F8D2585B8783D481 54404762BBB6E853 BDE6D2B9216EC7A8; do
+            gpg --keyserver keyserver.ubuntu.com --recv-keys $key
+            gpg --export --armor $key | tee /etc/apt/trusted.gpg.d/$key.asc
+          done
+
       - name: Build Raspberry Pi Image with pi-gen
         uses: usimd/pi-gen-action@v1
         with:
