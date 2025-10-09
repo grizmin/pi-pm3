@@ -26,10 +26,8 @@ jobs:
       - name: Build Raspberry Pi Image with pi-gen
         uses: usimd/pi-gen-action@v1
         id: build_pi_pm3
-        env:
-          GITHUB_CWD: ${{ env.GITHUB_CWD }}
         with:
           image-name: pi-pm3-${{ github.event.inputs.tag || github.ref_name }}
-          pi-gen-dir: ./pi-gen
-          stage-list: "${{ env.GITHUB_CWD }}/pi-gen/stage0 stage0 stage1 stage2 ${{ env.GITHUB_CWD }}/pi-gen/stageDTPM3"
+          pi-gen-dir: ${{ github.workspace }}/pi-gen-origin
+          stage-list: "./pi-gen/stage0 stage0 stage1 stage2 ./pi-gen/stageDTPM3"
           verbose-output: true
