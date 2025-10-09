@@ -1,6 +1,4 @@
-#!/bin/bash
-
-set -ex
+#!/bin/bash -ex
 
 # GPG error: bookworm InRelease: The following signatures couldn't be verified
 # because the public key is not available
