@@ -1,0 +1,24 @@
+name: Build Raspberry Pi Image
+
+on:
+  push:
+    branches:
+      - "*"
+  pull_request:
+    branches:
+      - "*"
+
+jobs:
+  build-image:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build Raspberry Pi image with pi-gen-action
+        uses: usimd/pi-gen-action@v1
+        with:
+          pi-gen-dir: ./pi-gen
+          config: ./pi-gen/config
+          stages: stageDTPM3
+          publish: false
