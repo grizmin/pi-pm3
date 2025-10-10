@@ -1,8 +1,9 @@
 #!/bin/bash -ex
 
 if [ ! -d "${ROOTFS_DIR}" ]; then
-  copy_previous
-  # bootstrap ${RELEASE} "${ROOTFS_DIR}" http://raspbian.raspberrypi.com/raspbian/
+  # copy_previous
+  # Previous stage rootfs not found
+  bootstrap ${RELEASE} "${ROOTFS_DIR}" http://raspbian.raspberrypi.com/raspbian/
 fi
 
 # GPG error: bookworm InRelease: The following signatures couldn't be verified
