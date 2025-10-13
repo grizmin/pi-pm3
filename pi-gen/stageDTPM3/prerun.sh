@@ -1,10 +1,10 @@
 #!/bin/bash -ex
 
-if [ ! -d "${ROOTFS_DIR}" ]; then
-  # copy_previous
-  # Previous stage rootfs not found
-  # bootstrap ${RELEASE} "${ROOTFS_DIR}" http://raspbian.raspberrypi.com/raspbian/
-fi
+# if [ ! -d "${ROOTFS_DIR}" ]; then
+#   # copy_previous
+#   # Previous stage rootfs not found
+#   bootstrap ${RELEASE} "${ROOTFS_DIR}" http://raspbian.raspberrypi.com/raspbian/
+# fi
 
 # GPG error: bookworm InRelease: The following signatures couldn't be verified
 # because the public key is not available
