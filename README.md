@@ -59,4 +59,4 @@ On a successful build, you should get something like the screenshot blow:
 # CHANGELOG
 
 * v1.1.0
-    - Updated dependencies for debain bookworm.
+    - Updated dependencies for debain trixie.
