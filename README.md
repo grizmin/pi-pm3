@@ -39,7 +39,7 @@ Password: ChangeMe
 
 ## build
 
-To build new image, you should follow the steps below:
+To build a new image, you should follow the steps below:
 (Tested only on Apple Silicon macbook)
 
 1. checkout pi-gen  
@@ -59,4 +59,4 @@ On a successful build, you should get something like the screenshot blow:
 # CHANGELOG
 
 * v1.1.0
-    - Updated dependencies for debain trixie.
+    - Updated dependencies for debain Trixie.
