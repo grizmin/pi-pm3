@@ -1,4 +1,4 @@
-This version of Pi-gen is configured to set up a wifio access point, and SSH.
+This version of Pi-gen is configured to set up a wifi access point, and SSH.
 
 The default account is username: `dt` password: `proxmark3`
 

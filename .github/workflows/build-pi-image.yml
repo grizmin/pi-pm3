@@ -1,0 +1,36 @@
+name: Build Raspberry Pi Image
+
+on:
+  push:
+    branches:
+      - "*"
+  pull_request:
+    branches:
+      - "*"
+
+jobs:
+  build-rootfs:
+    runs-on: ubuntu-24.04-arm
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build Raspberry Pi Image with pi-gen
+        uses: usimd/pi-gen-action@v1
+        id: build
+        with:
+          image-name: pi-pm3-${{ github.event.inputs.tag || github.ref_name }}
+          stage-list: "stage0 stage1 stage2 ./pi-gen/stageDTPM3"
+          username: dt
+          # these two options are just for debugging the GitHub Action failure:
+          verbose-output: true
+          pi-gen-dir: ${{ github.workspace }}/pi-gen-origin
+
+      - name: Upload Artifact
+        uses: svenstaro/upload-release-action@v2
+        with:
+          asset_name: "pi-pm3-trixie-arm64-lite-${{ github.event.inputs.tag || github.ref_name }}.img.zip"
+          file: ${{ steps.build.outputs.image-path }}
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          tag: ${{ github.event.inputs.tag || github.ref }}
+          overwrite: true

@@ -1,5 +1,5 @@
 # Proxmark3 Raspberry Pi Zero 2 W
-Did you ever thought how cool it will be if you can add network capabilities to yor cheap Proxmark3 easy?
+Have you ever thought about how cool it would be if you could add network capabilities to your cheap Proxmark3 easy?
 You can do that relatively cheap using a RPi zero 2 w and external power. Both my pi0 and proxmark3easy are running for more than 5 hours on a 10000mah xiaomi power bank.   
 
 All you need to do is boot from this image and enjoy using your pm3 over wifi.   
@@ -28,6 +28,7 @@ DHCP range: 10.3.141.50 — 10.3.141.254
 SSID: raspi-webgui
 Password: ChangeMe
 ```
+
 ## web shell
 * web shell (u: dt ; p: proxmark3) at http://10.3.141.1:8000/
 
@@ -35,9 +36,10 @@ Password: ChangeMe
 * pm3 shell (u: dt ; p: proxmark3) at http://10.3.141.1:8080/
 ![pm3shell](images/pm3shell.jpg)
 
+
 ## build
 
-To build new image you should follow the steps below:
+To build a new image, you should follow the steps below:
 (Tested only on Apple Silicon macbook)
 
 1. checkout pi-gen  
@@ -46,12 +48,12 @@ To build new image you should follow the steps below:
     ``` cp -rp pi-gen/* pmbuild/ ```
 3. Checkout the arm64 branch of pi-gen  
     ``` cd pmbuild; git checkout arm64 ```
-4. make sure you have a docker server running (or any of it's alternatives https://spacelift.io/blog/docker-alternatives)
+4. make sure you have a docker server running (or any of its [alternatives](https://spacelift.io/blog/docker-alternatives))
 5. start the build in a docker container   
    ``` ./docker-build.sh ```
 
-On a successful build you should get something like the screenshot blow:
-        ![build](images/build.jpg)
+On a successful build, you should get something like the screenshot blow:
+![build](images/build.jpg)
 
 
 # CHANGELOG
